@@ -50,7 +50,7 @@ export default function Hero() {
             Transform
             <br />
             <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-navy-600 bg-clip-text text-transparent">
-              Patient Care
+              Mental Health Care
             </span>
           </motion.h1>
 
@@ -79,81 +79,140 @@ export default function Hero() {
               className="absolute inset-0 w-full h-full"
               style={{ zIndex: 0 }}
             >
+              {/* Flowing curved connection paths */}
               <motion.path
-                d="M 180 180 L 420 180 L 420 230 L 660 230"
-                stroke="#3b82f6"
-                strokeWidth="3"
+                d="M 180 100 Q 300 120, 420 140 Q 480 150, 540 160 T 660 180"
+                stroke="url(#blueFlowGradient)"
+                strokeWidth="2.5"
                 fill="none"
-                opacity="0.4"
+                opacity="0.5"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{
+                  pathLength: [0, 1, 1, 0],
+                  opacity: [0, 0.5, 0.5, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  times: [0, 0.3, 0.7, 1],
+                }}
               />
               <motion.path
-                d="M 180 280 L 350 280 L 350 240 L 420 240 L 660 240"
-                stroke="#a855f7"
-                strokeWidth="3"
+                d="M 180 250 Q 280 240, 380 250 Q 460 260, 540 250 T 660 245"
+                stroke="url(#purpleFlowGradient)"
+                strokeWidth="2.5"
                 fill="none"
-                opacity="0.4"
+                opacity="0.5"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{
+                  pathLength: [0, 1, 1, 0],
+                  opacity: [0, 0.5, 0.5, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.8,
+                  times: [0, 0.3, 0.7, 1],
+                }}
               />
               <motion.path
-                d="M 180 380 L 300 380 L 300 250 L 420 250 L 660 250"
-                stroke="#f97316"
-                strokeWidth="3"
+                d="M 180 400 Q 260 380, 350 360 Q 440 340, 520 320 T 660 310"
+                stroke="url(#orangeFlowGradient)"
+                strokeWidth="2.5"
                 fill="none"
-                opacity="0.4"
+                opacity="0.5"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{
+                  pathLength: [0, 1, 1, 0],
+                  opacity: [0, 0.5, 0.5, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1.6,
+                  times: [0, 0.3, 0.7, 1],
+                }}
               />
 
-              <circle cx="420" cy="180" r="4" fill="#3b82f6" opacity="0.5" />
-              <circle cx="420" cy="230" r="4" fill="#3b82f6" opacity="0.5" />
-              <circle cx="350" cy="280" r="4" fill="#a855f7" opacity="0.5" />
-              <circle cx="350" cy="240" r="4" fill="#a855f7" opacity="0.5" />
-              <circle cx="420" cy="240" r="4" fill="#a855f7" opacity="0.5" />
-              <circle cx="300" cy="380" r="4" fill="#f97316" opacity="0.5" />
-              <circle cx="300" cy="250" r="4" fill="#f97316" opacity="0.5" />
-              <circle cx="420" cy="250" r="4" fill="#f97316" opacity="0.5" />
+              {/* Flowing particle streams */}
+              {[...Array(8)].map((_, i) => (
+                <motion.circle
+                  key={`particle-${i}`}
+                  r="2.5"
+                  fill={
+                    i % 3 === 0
+                      ? "#3b82f6"
+                      : i % 3 === 1
+                      ? "#a855f7"
+                      : "#f97316"
+                  }
+                  opacity="0"
+                  animate={{
+                    cx: [
+                      180,
+                      220 + i * 15,
+                      300 + i * 20,
+                      400 + i * 15,
+                      520 + i * 10,
+                      660,
+                    ],
+                    cy: [
+                      100 + (i % 3) * 150,
+                      110 + (i % 3) * 140 + Math.sin(i) * 20,
+                      140 + (i % 3) * 130 + Math.sin(i) * 30,
+                      150 + (i % 3) * 120 + Math.sin(i) * 20,
+                      160 + (i % 3) * 110 + Math.sin(i) * 15,
+                      180 + (i % 3) * 100,
+                    ],
+                    opacity: [0, 0.6, 0.8, 0.6, 0.4, 0],
+                  }}
+                  transition={{
+                    duration: 3.5 + i * 0.2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: i * 0.3,
+                  }}
+                />
+              ))}
 
-              <motion.circle
-                r="5"
-                fill="#3b82f6"
-                opacity="0.8"
-                animate={{
-                  cx: [180, 420, 420, 660],
-                  cy: [180, 180, 230, 230],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-              <motion.circle
-                r="5"
-                fill="#a855f7"
-                opacity="0.8"
-                animate={{
-                  cx: [180, 350, 350, 420, 660],
-                  cy: [280, 280, 240, 240, 240],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: 0.5,
-                }}
-              />
-              <motion.circle
-                r="5"
-                fill="#f97316"
-                opacity="0.8"
-                animate={{
-                  cx: [180, 300, 300, 420, 660],
-                  cy: [380, 380, 250, 250, 250],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: 1,
-                }}
-              />
+              <defs>
+                <linearGradient
+                  id="blueFlowGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="#60a5fa" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
+                </linearGradient>
+                <linearGradient
+                  id="purpleFlowGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stopColor="#a855f7" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="#c084fc" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#a855f7" stopOpacity="0.2" />
+                </linearGradient>
+                <linearGradient
+                  id="orangeFlowGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stopColor="#f97316" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="#fb923c" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#f97316" stopOpacity="0.2" />
+                </linearGradient>
+              </defs>
             </svg>
 
             <div className="absolute left-0 top-1/2 -translate-y-1/2 space-y-12">
@@ -162,6 +221,7 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="flex items-center gap-4"
+                style={{ transform: "translateY(-150px)" }}
               >
                 <motion.div className="relative w-20 h-20 rounded-full border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center">
                   <motion.div
@@ -215,6 +275,7 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
                 className="flex items-center gap-4"
+                style={{ transform: "translateY(150px)" }}
               >
                 <motion.div className="relative w-20 h-20 rounded-full border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center">
                   <motion.div
@@ -245,20 +306,49 @@ export default function Hero() {
               transition={{ duration: 1, delay: 1.2 }}
             >
               <motion.div
-                className="relative w-24 h-24 rounded-lg border-2 border-indigo-300 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 backdrop-blur-sm flex items-center justify-center"
-                animate={{
-                  borderColor: ["#c7d2fe", "#ddd6fe", "#fbcfe8", "#c7d2fe"],
+                className="relative w-32 h-32 rounded-full flex items-center justify-center"
+                style={{
+                  background:
+                    "radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.2), rgba(249, 115, 22, 0.15))",
+                  backdropFilter: "blur(20px)",
                 }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                animate={{
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                  rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+                }}
               >
-                <div className="grid grid-cols-2 gap-1.5">
+                <motion.div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background:
+                      "conic-gradient(from 0deg, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.4), rgba(249, 115, 22, 0.4), rgba(59, 130, 246, 0.4))",
+                    filter: "blur(8px)",
+                  }}
+                  animate={{
+                    rotate: [0, -360],
+                    opacity: [0.3, 0.6, 0.3],
+                  }}
+                  transition={{
+                    rotate: { duration: 8, repeat: Infinity, ease: "linear" },
+                    opacity: {
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
+                  }}
+                />
+                <div className="relative grid grid-cols-2 gap-2">
                   {[...Array(4)].map((_, i) => (
                     <motion.div
                       key={i}
-                      className="w-2 h-2 rounded-sm bg-indigo-400"
+                      className="w-3 h-3 rounded-full bg-gradient-to-br from-indigo-400 to-purple-400"
                       animate={{
                         opacity: [0.3, 1, 0.3],
-                        scale: [0.8, 1.2, 0.8],
+                        scale: [0.8, 1.3, 0.8],
                       }}
                       transition={{
                         duration: 1.5,
