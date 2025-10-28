@@ -1,0 +1,25 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clipboard with checklist -->
+  <rect x="80" y="40" width="140" height="200" rx="8" fill="white" stroke="rgba(255,255,255,0.8)" stroke-width="3"/>
+  <rect x="120" y="30" width="60" height="20" rx="4" fill="white" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+  
+  <!-- Checkmarks -->
+  <circle cx="110" cy="85" r="8" fill="rgba(255,255,255,0.9)"/>
+  <path d="M 107 85 L 110 88 L 115 82" stroke="rgba(59, 130, 246, 0.9)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <circle cx="110" cy="125" r="8" fill="rgba(255,255,255,0.9)"/>
+  <path d="M 107 125 L 110 128 L 115 122" stroke="rgba(59, 130, 246, 0.9)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <circle cx="110" cy="165" r="8" fill="rgba(255,255,255,0.9)"/>
+  <path d="M 107 165 L 110 168 L 115 162" stroke="rgba(59, 130, 246, 0.9)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Lines representing text -->
+  <line x1="130" y1="85" x2="190" y2="85" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="130" y1="125" x2="190" y2="125" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="130" y1="165" x2="190" y2="165" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Stethoscope element -->
+  <path d="M 220 190 Q 220 170 200 160" stroke="rgba(255,255,255,0.8)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="220" cy="205" r="12" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="4"/>
+  <circle cx="200" cy="160" r="8" fill="rgba(255,255,255,0.9)"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield -->
+  <path d="M 150 50 L 220 80 L 220 150 Q 220 220 150 250 Q 80 220 80 150 L 80 80 Z" 
+        fill="white" stroke="rgba(255,255,255,0.9)" stroke-width="4"/>
+  
+  <!-- Lock -->
+  <rect x="125" y="140" width="50" height="60" rx="6" fill="rgba(16, 185, 129, 0.3)" stroke="rgba(255,255,255,0.9)" stroke-width="3"/>
+  
+  <!-- Lock shackle -->
+  <path d="M 135 140 L 135 120 Q 135 105 150 105 Q 165 105 165 120 L 165 140" 
+        fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Keyhole -->
+  <circle cx="150" cy="160" r="6" fill="rgba(255,255,255,0.9)"/>
+  <rect x="147" y="165" width="6" height="15" rx="2" fill="rgba(255,255,255,0.9)"/>
+  
+  <!-- Checkmark overlay -->
+  <circle cx="190" cy="100" r="20" fill="rgba(16, 185, 129, 0.9)"/>
+  <path d="M 183 100 L 188 105 L 197 93" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
