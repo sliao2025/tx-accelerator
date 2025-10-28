@@ -39,7 +39,7 @@ export default function Screenshots() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative z-10 mb-8 md:mb-0 md:mr-20"
           >
-            <div className="relative aspect-video overflow-hidden border border-gray-200 bg-white">
+            <div className="relative rounded-lg aspect-video overflow-hidden border border-gray-200 bg-white">
               <Image
                 src="/clinician-dashboard.png"
                 alt="TxAccelerator Dashboard"
@@ -64,7 +64,7 @@ export default function Screenshots() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="relative md:absolute md:right-0 md:top-32 md:w-3/5 z-20"
           >
-            <div className="relative aspect-video overflow-hidden border border-gray-200 bg-white">
+            <div className="relative rounded-lg aspect-video overflow-hidden border border-gray-200 bg-white">
               <Image
                 src="/storysection.png"
                 alt="TxAccelerator Assessment Tools"

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const features = [
   {
@@ -14,18 +14,18 @@ const features = [
     gradient: "from-blue-500 to-cyan-500",
   },
   {
-    title: "HIPAA Compliant",
-    description:
-      "Enterprise-grade security and compliance standards. Your patient data is protected with end-to-end encryption and strict privacy protocols.",
-    image: "/feature-hipaa.svg",
-    gradient: "from-green-500 to-emerald-500",
-  },
-  {
     title: "NLP/ML Risk Assessment",
     description:
       "Advanced natural language processing and machine learning algorithms analyze patient data to identify risk factors and predict outcomes with precision.",
     image: "/feature-ml.svg",
     gradient: "from-purple-500 to-pink-500",
+  },
+  {
+    title: "HIPAA Compliant",
+    description:
+      "Enterprise-grade security and compliance standards. Your patient data is protected with end-to-end encryption and strict privacy protocols.",
+    image: "/feature-hipaa.svg",
+    gradient: "from-green-500 to-emerald-500",
   },
   {
     title: "Personalized Patient Reports",
@@ -48,8 +48,12 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-32 px-6 relative overflow-hidden bg-white">
+    <section
+      ref={ref}
+      className="py-32 px-6 relative overflow-hidden bg-gradient-to-b from-blue-50/30 via-blue-50/10 to-white"
+    >
       <div className="container mx-auto max-w-7xl">
+        {/* Header with animated diagram */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -63,7 +67,7 @@ export default function Features() {
               Real Results
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light mb-16">
             Everything your clinic needs to deliver exceptional patient care.
           </p>
         </motion.div>
@@ -77,20 +81,18 @@ export default function Features() {
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative overflow-hidden border border-gray-200 bg-white hover:border-gray-300 transition-all"
+                transition={{ duration: 0.6, delay: index * 0.1 + 1 }}
+                className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-300 transition-all"
               >
                 {/* Image section */}
                 <div
                   className={`relative h-64 bg-gradient-to-br ${feature.gradient} overflow-hidden`}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Image
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <img
                       src={feature.image}
-                      alt={feature.title}
-                      width={300}
-                      height={300}
-                      className="object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
+                      alt=""
+                      className="w-full h-full object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                 </div>
@@ -115,20 +117,18 @@ export default function Features() {
                 key={index + 2}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: (index + 2) * 0.1 }}
-                className="group relative overflow-hidden border border-gray-200 bg-white hover:border-gray-300 transition-all"
+                transition={{ duration: 0.6, delay: (index + 2) * 0.1 + 1 }}
+                className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-300 transition-all"
               >
                 {/* Image section */}
                 <div
                   className={`relative h-48 bg-gradient-to-br ${feature.gradient} overflow-hidden`}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Image
+                  <div className="absolute inset-0 flex items-center justify-center p-6">
+                    <img
                       src={feature.image}
-                      alt={feature.title}
-                      width={200}
-                      height={200}
-                      className="object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
+                      alt=""
+                      className="w-full h-full object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                 </div>
